@@ -1,0 +1,26 @@
+# Syntryx Configuration
+
+scanner:
+  name: "Syntryx"
+  version: "0.1.0"
+  max_depth: 3
+  max_urls: 150
+  timeout: 15
+  user_agent: "Syntryx/0.1 Security Scanner"
+  respect_robots: false
+  delay: 0.5
+
+modules:
+  injection: true
+  ssrf: true
+  csrf: true
+  access_control: true
+  crypto: true
+  misconfiguration: true
+  authentication: true
+  business_logic: true
+  insecure_design: true
+
+output:
+  folder: "results"
+  format: "html"

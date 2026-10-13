@@ -1,0 +1,27 @@
+[project]
+name = "syntryx"
+version = "0.1.0"
+description = "Syntryx - OWASP Top 10 Vulnerability Scanner"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx[http2]",
+    "playwright",
+    "beautifulsoup4",
+    "typer[all]",
+    "rich",
+    "pydantic",
+    "pyyaml",
+    "jinja2",
+    "aiofiles"
+]
+
+[project.scripts]
+syntryx = "syntryx.__main__:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["syntryx*"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
