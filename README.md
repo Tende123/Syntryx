@@ -4,17 +4,26 @@
 
 It helps you quickly identify common security issues in web applications and generates clean HTML and JSON reports.
 
-## Features
+---
+
+## About
+
+Syntryx is designed to be simple, modular, and practical.  
+It crawls a target website and runs multiple security checks based on the OWASP Top 10.
+
+**Currently supports:**
 
 - Security Misconfiguration
 - Cryptographic Failures
 - Injection (XSS + SQL Injection)
 - CSRF Detection
 - SSRF Detection
-- Access Control Issues (IDOR + Forced Browsing)
+- Access Control Issues
 - Authentication Checks
 - Business Logic Flaws
 - Insecure Design Indicators
+
+---
 
 ## Installation
 
@@ -28,28 +37,32 @@ source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -e .
 playwright install chromium
 
+---
+
 ## Usage
 
-```Bash
+```bash
 syntryx https://example.com
 
-After the scan, reports will be saved in the results/ folder:
+After the scan finishes, reports will be saved in the results/ folder:
 
-syntryx_report_XXXX.html → Visual report
-syntryx_report_XXXX.json → Machine-readable report
+HTML Report → Visual report
+JSON Report → Machine-readable report
 
-Open the HTML report with:
+To open the HTML report:
 
-```Bash
+```bash
 xdg-open results/syntryx_report_*.html
 # or
 firefox results/syntryx_report_*.html
 
 ## Configuration
 
-You can enable or disable modules inside the config.yaml file.
+You can enable/disable modules in config.yaml.
+
+---
 
 ##Disclaimer
 
-Only scan websites that you own or have explicit permission to test.
+Only scan websites you own or have explicit permission to test.
 Unauthorized scanning is illegal.
